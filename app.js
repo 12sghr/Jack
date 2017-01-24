@@ -10,6 +10,10 @@ jack.on("start", () => {
     jack.postMessageToUser("otter", "Hey", params);
 });
 
-jack.on("message", () => {
-    jack.postMessageToUser("otter", "YO", params);
+jack.on("message", (data) => {
+    const test = /test/;
+
+    if(test.test(data.text)){
+        jack.postMessageToUser("otter", "YO", params);
+    }
 });
