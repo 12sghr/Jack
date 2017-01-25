@@ -22,6 +22,10 @@ jack.on("message", (data) => {
     }
 });
 
+jack.on("close", () => {
+    jack.postMessageToGroup("test", "Zzz......", params);
+});
+
 http.createServer((request, response) => {
     response.writeHead(200, {
         "Content-Type": "text/plain",
