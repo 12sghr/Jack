@@ -1,5 +1,6 @@
 const MySlackBot = require("./slackBot");
 const Weather = require("./weather");
+const http = require("http");
 
 const weather = new Weather();
 const mySlackBot = new MySlackBot();
@@ -20,3 +21,5 @@ jack.on("message", (data) => {
         jack.postMessageToUser("otter", "YO", params);
     }
 });
+
+http.createServer(() => {}).listen(process.env.PORT || 5000);
