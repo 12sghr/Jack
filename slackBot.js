@@ -3,7 +3,7 @@ const SlackBot = require("slackbots");
 class MySlackBot{
     constructor(){
         this.jack = new SlackBot({
-            token: "xoxb-129059281282-pW7YgxK1PY0w89ipYMVUQpUa",
+            token: process.env.APITOKEN_JACK,
             name: "jack",
         });
         this.params = {
@@ -11,7 +11,7 @@ class MySlackBot{
         };
     }
     replyChannel(channel, text){
-        this.jack.postMessageToChannel(channel, text);
+        this.jack.postMessageToGroup(channel, text, this.params);
     }
 }
 
